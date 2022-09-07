@@ -4,7 +4,7 @@
 @import "functions";
 @import "mixins";
 @import "sprites";
-@import "fonts";
+
 @import "vendor";
 @import "base";
 @import "helpers";
@@ -14,8 +14,55 @@
 
 @import "pages/home";*/
 @import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css ";
+@import "_fonts.scss";
 
-
-body{
+body {
 	background-color: #FAFAFA;
+}
+
+a {
+	text-decoration: none;
+
+}
+
+.content {
+	max-width: 1140px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	padding-top: 100px;
+
+	&_links {
+		width: auto;
+		a {
+			padding-left: 30px;
+			width: auto;
+			font-weight: 700;
+			font-family: "SF Pro Display";
+			color: #282A33;
+			position: relative;
+			&:active::after{
+				content: url("../images/hover_link-active.png");
+				position: absolute;
+				z-index: -1;
+				top: -90px;
+				width: 166px;
+				mix-blend-mode: normal;
+				left: 0;
+			}
+		}
+
+
+	}
+	&_img{
+		width: 150px;
+		height: 150px;
+	}
+
+
 }
