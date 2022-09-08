@@ -81,7 +81,10 @@ a {
 
 	&_burger {
 
-
+		display: none;
+		@media(max-width: 1024px){
+			display: block;
+		}
 		& img {
 			width: 26px;
 			padding-top: 10px;
