@@ -38,11 +38,16 @@ a {
 	flex-direction: row;
 	justify-content: end;
 	padding-top: 100px;
-	@media(max-width:1024px) {
-		display: none;
+	@media(max-width: 1024px) {
+		padding-top: 20px;
 	}
+
 	&_links {
 		width: auto;
+		@media(max-width: 1024px) {
+			display: none;
+		}
+
 		a {
 			padding-left: 30px;
 			width: auto;
@@ -50,7 +55,8 @@ a {
 			font-family: "SF Pro Display";
 			color: #282A33;
 			position: relative;
-			&:active::after{
+
+			&:active::after {
 				content: url("../images/hover_link-active.png");
 				position: absolute;
 				z-index: -1;
@@ -63,21 +69,68 @@ a {
 
 
 	}
-	&_img{
+
+	&_img {
 		width: 150px;
 		height: 150px;
+		@media(max-width: 1024px) {
+			width: 80px;
+			height: 80px;
+		}
 	}
-	&_modile{
+
+	&_burger {
+
+
+		& img {
+			width: 26px;
+			padding-top: 10px;
+			&.active {
+				display: none;
+			}
+		}
+	}
+
+	&_inner {
 		display: none;
-		padding-left: 20px;
-		padding-right: 20px;
-		padding-top: 20px;
-		&-img{
-			width: 50px;
+
+		& a {
+			font-size: 26px;
+			color: #282A33;
+			padding-bottom: 40px;
+			font-weight: 700;
+			position: relative;
+			&:active::after {
+				content: url("../images/hover_link-active.png");
+				position: absolute;
+				z-index: -1;
+				top: -90px;
+				width: 73px;
+				mix-blend-mode: normal;
+				left: 0;
+			}
 		}
-		@media(max-width: 1024px){
+	}
+
+	&.open {
+		flex-direction: column;
+		padding-top: 10px;
+		padding-left: 40px;
+
+		& .header_img {
+			opacity: 0;
+		}
+
+		& .header_inner {
 			display: flex;
+			flex-direction: column;
+
+			& img {
+				margin-left: -40px;
+				margin-top: -20px ;
+			}
 		}
+
 	}
 
 

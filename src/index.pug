@@ -1,21 +1,27 @@
 extends pug/base
 
 prepend vars
-	//-
+	//--
 
 append vars
-	//-
+	//--
 
 block content
 	.content
 		header.header
 			.row.p-0.m-0.justify-content-between.w-100
-
 				img(src='/images/sprites/svg/man.svg').header_img
 				.header_links
 					a(href='#') Резюме
 					a(href='#') О себе
 					a(href='#') Навыки
-		header.header_modile
-			img(src='/images/sprites/svg/man.svg').header_modile-img
+				.header_burger.w-auto
+					img(src='/images/sprites/svg/burger.svg')
+					img(src='/images/sprites/svg/burger--active.svg').active
+			.header_inner
+				a(href='#') Резюме
+				a(href='#') О себе
+				a(href='#') Навыки
+				img(src='/images/header--open.png')
+
 

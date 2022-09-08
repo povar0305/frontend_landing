@@ -15,3 +15,10 @@ scrollToAnchor.init();
 
 header.init();
 lazyLoading.init();
+
+$(document).ready(function (){
+	$('.header_burger').click(function (){
+		$('.header_burger img').toggle()
+		$('.header').toggleClass('open')
+	})
+})
