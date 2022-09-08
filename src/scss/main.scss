@@ -84,12 +84,14 @@ a {
 	&_burger {
 
 		display: none;
-		@media(max-width: 1024px){
+		@media(max-width: 1024px) {
 			display: block;
 		}
+
 		& img {
 			width: 26px;
 			padding-top: 10px;
+
 			&.active {
 				display: none;
 			}
@@ -105,6 +107,7 @@ a {
 			padding-bottom: 40px;
 			font-weight: 700;
 			position: relative;
+
 			&:active::after {
 				content: url("../images/hover_link-active.png");
 				position: absolute;
@@ -132,7 +135,7 @@ a {
 
 			& img {
 				margin-left: -40px;
-				margin-top: -20px ;
+				margin-top: -20px;
 			}
 		}
 
@@ -141,22 +144,29 @@ a {
 
 }
 
-.about{
+.about {
 	padding-top: 40px;
-	@media(max-width: 1024px){
+	padding-bottom: 200px;
+	@media(max-width: 1024px) {
 		flex-direction: column;
-		padding-left: 20px!important;
+		padding-left: 20px !important;
+		padding-top: 30px;
+		padding-right: 20px !important;
+		padding-bottom: 40px;
 	}
-	& h1, & h3{
+
+	& h1, & h3 {
 		margin: 0;
 		font-weight: 700;
 		font-size: 36px;
 		line-height: 50px;
 	}
-	& h3{
+
+	& h3 {
 		padding-bottom: 30px;
 	}
-	& p, & a{
+
+	& p, & a {
 		max-width: 560px;
 		font-weight: 400;
 		font-size: 14px;
@@ -164,15 +174,91 @@ a {
 		color: $color_link;
 		padding-bottom: 10px;
 	}
-	&_col{
+
+	&_col {
 		width: auto;
-		&-link{
+
+		&-link {
 			padding-right: 20px;
 			padding-left: 0;
 		}
-		&:nth-child(2){
-			padding-right: 50px!important;
+
+		&:nth-child(2) {
+			padding-right: 50px !important;
 		}
 	}
 
+}
+
+.experience {
+	&_col {
+		display: flex;
+		flex-direction: column;
+		width: auto;
+
+		&.standing {
+			max-width: 560px;
+		}
+
+		& h4 {
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 29px;
+			color: $color_text;
+			padding-bottom: 30px;
+		}
+
+		&_inner {
+			display: flex;
+			flex-direction: column;
+			padding-bottom: 60px;
+
+			&--date {
+				color: $text_color--gray;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 17px;
+				margin-bottom: 0;
+			}
+
+			&--row {
+				display: flex;
+				flex-direction: row;
+				font-weight: 700;
+				font-size: 14px;
+				line-height: 17px;
+				color: $color_text;
+				padding-top: 8px;
+				& p{
+					margin-bottom: 0;
+					padding-left: 8px;
+				}
+				& .thin {
+					font-weight: 400;
+				}
+
+				& img {
+					padding-left: 8px;
+				}
+			}
+
+			&--text {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 17px;
+				color: $color_text;
+				margin: 0;
+				padding-top: 8px;
+			}
+
+			& a {
+				color: $color_link--blue;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 17px;
+				text-decoration-line: underline;
+				padding-top: 3px;
+			}
+		}
+	}
 }
