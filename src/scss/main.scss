@@ -1,6 +1,6 @@
 // stylelint-disable at-rule-empty-line-before
 
-/*@import "variables";
+/*
 @import "functions";
 @import "mixins";
 @import "sprites";
@@ -15,7 +15,7 @@
 @import "pages/home";*/
 @import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css ";
 @import "_fonts.scss";
-
+@import "_variables.scss";
 
 body {
 	background-color: #FAFAFA;
@@ -53,7 +53,7 @@ a {
 			width: auto;
 			font-weight: 700;
 			font-family: "SF Pro Display";
-			color: #282A33;
+			color: $color_link;
 			position: relative;
 
 			&:active::after {
@@ -73,6 +73,7 @@ a {
 	&_img {
 		width: 150px;
 		height: 150px;
+		padding: 0;
 		@media(max-width: 1024px) {
 			width: 80px;
 			height: 80px;
@@ -99,7 +100,7 @@ a {
 
 		& a {
 			font-size: 26px;
-			color: #282A33;
+			color: $color_link;
 			padding-bottom: 40px;
 			font-weight: 700;
 			position: relative;
@@ -136,5 +137,37 @@ a {
 
 	}
 
+
+}
+
+.about{
+	padding-top: 40px;
+	& h1, & h3{
+		margin: 0;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 50px;
+	}
+	& h3{
+		padding-bottom: 30px;
+	}
+	& p, & a{
+		max-width: 560px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+		color: $color_link;
+		padding-bottom: 10px;
+	}
+	&_col{
+		width: auto;
+		&-link{
+			padding-right: 20px;
+			padding-left: 0;
+		}
+		&:nth-child(2){
+			padding-right: 50px!important;
+		}
+	}
 
 }
