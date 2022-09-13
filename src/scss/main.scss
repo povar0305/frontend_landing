@@ -389,3 +389,52 @@ a {
 		}
 	}
 }
+
+.skills {
+	padding-bottom: 200px;
+	padding-top: 200px;
+	position: relative;
+
+	& h4 {
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 29px;
+		color: $color_text;
+		padding-bottom: 30px;
+		margin-bottom: 0;
+		@media(max-width: 1024px) {
+			padding-bottom: 20px;
+		}
+	}
+
+	&_col {
+		display: flex;
+		flex-direction: column;
+		width: calc(25% - 20px);
+		padding-left: 0;
+		padding-right: 0;
+
+		& p {
+			font-size: 14px;
+			line-height: 20px;
+			color: $color_text;
+			margin: 0;
+
+			&.bold {
+				font-weight: 700;
+				line-height: 17px;
+				padding-bottom: 6px;
+			}
+		}
+	}
+
+	&--before {
+		width: 100%;
+		position: absolute;
+		top: 0px;
+
+		& img {
+			width: 100%;
+		}
+	}
+}
