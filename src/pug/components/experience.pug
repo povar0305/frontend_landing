@@ -1,8 +1,9 @@
 .content
 	.experience
-		.row.justify-content-between
+		.row
 			.experience_col.standing
 				h4 Опыт работы
+				// TODO 	разобраться с отступами
 				.experience_col_inner
 					p.experience_col_inner--date Июль 2019
 					.experience_col_inner--row
@@ -21,8 +22,12 @@
 						img(src='/images/experience_company1.png').px-0
 						p  J Creative Solutions
 						p.thin Digital agency in Minsk, Belarus
-					p.experience_col_inner--text Created visuals for digital marketing channels such as social media, promo web and online ads. Developed visual language from scratch or following the branding guidelines. Designed presentations
-						| for clients and indoor purposes.
+					p.experience_col_inner--text
+						| Created visuals for digital marketing channels such as social media, promo web and
+						| online ads. Developed visual language from scratch or following the branding guidelines. Designed
+						|presentations
+						br
+						|for clients and indoor purposes.
 					a(href='#') Agency projects
 				.experience_col_inner
 					p.experience_col_inner--date Март 2014 - Февраль 2017
@@ -34,6 +39,7 @@
 						p  OZ.by
 						p.thin Online bookstore in Minsk, Belarus
 					p.experience_col_inner--text Improved website performance and user experience of the biggest online bookstore OZ in Belarus, being a part of the marketing team,
+						br
 						|I interpreted Google Analytics data to IT, content and marketing colleagues. Advised on tech
 						|and content optimization strategy, automated processes, provided reports, increased organic
 						|traffic up to 150%.
@@ -59,6 +65,33 @@
 						p.thin Microelectronics factory in Minsk, Belarus
 					p.experience_col_inner--text Supported retail accounting system LS Trade, troubleshoot technical problems.
 
-			.experience_col
-			.experience_col
+			.experience_col.man
+				.experience_col--man
+					img(src='/images/experience_man.png')
+			.experience_col.education
 				h4 Образование
+				.experience_col_inner
+					img(src='/images/experienc_educat_1.png')
+					p.bold Interface Design: <br> Web & Mobile
+					p.m-0 IT-Academy, 2020
+				.experience_col_inner
+					img(src='/images/experienc_educat_2.png').small
+					p.bold Fundamentals of Usability
+					p.m-0 Skillshare, Oct 2018
+				.experience_col_inner
+					img(src='/images/experienc_educat_3.png').small
+					p.bold CG Artist
+					p.m-0 Polygon CG School, May-Sep 2017
+				.experience_col_inner
+					img(src='/images/experienc_educat_4.png').small
+					p.bold Graphic Design
+					p.m-0 Belarusian State Academy of Arts, 2015 - 2017 Postgraduate Diploma
+				.experience_col_inner
+					img(src='/images/experienc_educat_5.png').small
+					p.bold SEO Specialist
+					p.m-0 ARTOX Media, Jun-Aug 2012
+				.experience_col_inner
+					img(src='/images/experienc_educat_6.png').small
+					p.bold Information Technology Software
+					p.m-0 Belarusian State University of Informatics and Radioelectronics, 2011 - 2015 Bachelor’s degree
+					p.m-0 Polotsk State Economic College, 2007 - 2011 Associate’s degree
