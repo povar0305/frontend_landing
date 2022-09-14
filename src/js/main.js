@@ -8,7 +8,7 @@ import header from './components/header';
 import lazyLoading from './modules/lazyLoading';
 import scrollToAnchor from './modules/scrollToAnchor';
 import anime from 'animejs/lib/anime.es';
-
+import AOS from 'aos';
 ieFix();
 vhFix();
 actualYear();
@@ -16,18 +16,7 @@ scrollToAnchor.init();
 
 header.init();
 lazyLoading.init();
-$(document)
-	.ready(function () {
-		$('.preloader.loader')
-			.removeClass('loader');
-		$('.header_burger')
-			.click(function () {
-				$('.header_burger img')
-					.toggle();
-				$('.header')
-					.toggleClass('open');
-			});
-	});
+
 if(!localStorage.getItem('firstLoader')){
 	console.log(1)
 	anime({
@@ -47,3 +36,17 @@ if(!localStorage.getItem('firstLoader')){
 	$('.preloader')
 		.hide();
 }
+
+$(document)
+	.ready(function () {
+		AOS.init();
+		$('.preloader.loader')
+			.removeClass('loader');
+		$('.header_burger')
+			.click(function () {
+				$('.header_burger img')
+					.toggle();
+				$('.header')
+					.toggleClass('open');
+			});
+	});
