@@ -1,7 +1,9 @@
 extends pug/base
 
 prepend vars
-	//--
+	- title = '<?= htmlspecialchars($title) ?>'
+	- description = '<?= htmlspecialchars($description) ?>'
+	- image = '<?= htmlspecialchars($image) ?>'
 
 append vars
 	//--

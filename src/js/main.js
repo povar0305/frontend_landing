@@ -18,37 +18,40 @@ scrollToAnchor.init();
 header.init();
 lazyLoading.init();
 
-if(localStorage.getItem('firstLoader')){
-	$('.preloader').hide();
+if (localStorage.getItem('firstLoader')) {
+	$('.preloader')
+		.hide();
 
-}else{
+} else {
 	anime({
 		targets: '.preloader.loader img',
-		translateX: window.innerWidth+500,
+		translateX: window.innerWidth + 500,
 		translateY: -window.innerHeight,
 		easing: 'easeInOutSine',
 		duration: 3000,
 		complete: function (anim) {
 			$('.preloader')
 				.hide();
-/*
-			localStorage.setItem('firstLoader', true);
-*/
+			/*
+						localStorage.setItem('firstLoader', true);
+			*/
 		},
 	});
 }
 
 $(document)
 	.ready(function () {
+		$('.scroll').hide()
+
 		AOS.init();
 
 		const scroll = new LocomotiveScroll({
 			el: document.querySelector('[data-scroll-section]'),
-			smooth: true
+			smooth: true,
 		});
 		const scroll2 = new LocomotiveScroll({
 			el: document.querySelector('.header_links a'),
-			smooth: true
+			smooth: true,
 		});
 
 		$('.header_burger')
@@ -57,5 +60,31 @@ $(document)
 					.toggle();
 				$('.header')
 					.toggleClass('open');
+				$('body')
+					.toggleClass('noscroll');
+			});
+		$('.scroll')
+			.click(function () {
+				window.scrollTo(0, 0);
+			});
+		$(window)
+			.scroll(function () {
+				$('.scroll').show()
+				let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+				let windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				let documentHeight = Math.max(
+					document.body.scrollHeight, document.body.offsetHeight, document.body.clientHeight,
+					document.documentElement.scrollHeight, document.documentElement.offsetHeight, document.documentElement.clientHeight,
+				);
+				let precent = Math.round((scrollTop / (documentHeight - windowHeight)) * 100);
+				$('.scroll span')
+					.text(precent + '%');
+				if (precent > 99) {
+				$('.scroll span').hide()
+				$('.scroll img').show()
+				}else{
+					$('.scroll span').show()
+					$('.scroll img').hide()
+				}
 			});
 	});

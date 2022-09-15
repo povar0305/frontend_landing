@@ -513,3 +513,28 @@ a {
 		}
 	}
 }
+.scroll{
+	position: fixed;
+
+	right: 25px;
+	bottom: 25px;
+	border-radius: 100%;
+	padding: 12px 15px;
+	border: 1px solid #D2233C;
+	background-color: #fff;
+	&:hover{
+		cursor: pointer;
+	}
+	& img{
+		display: none;
+	}
+	& span{
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 100%;
+		color: $color_text;
+	}
+}
+.noscroll{
+	overflow: hidden;
+}
