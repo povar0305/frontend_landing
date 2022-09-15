@@ -1,17 +1,16 @@
 .content
 	header.header
-		//TODO фиксировать меню
 		.row.p-0.m-0.justify-content-between.w-100
 			img(src='/images/sprites/svg/man.svg').header_img
-			.header_links
-				a(href='#') Резюме
-				a(href='#') О себе
-				a(href='#') Навыки
+			.header_links(data-scroll-section)
+				a(href='#experience' data-scroll-to) Резюме
+				a(href='#about' data-scroll-to) О себе
+				a(href='#skills' data-scroll-to) Навыки
 			.header_burger.w-auto
 				img(src='/images/sprites/svg/burger.svg')
 				img(src='/images/sprites/svg/burger--active.svg').active
 		.header_inner
-			a(href='#') Резюме
-			a(href='#') О себе
-			a(href='#') Навыки
+			a(href='#experience' data-scroll-to) Резюме
+			a(href='#about' data-scroll-to) О себе
+			a(href='#skills' data-scroll-to) Навыки
 			img(src='/images/header--open.png')

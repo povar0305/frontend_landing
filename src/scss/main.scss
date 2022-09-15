@@ -17,14 +17,16 @@
 @import "_fonts.scss";
 @import "_variables.scss";
 @import "https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css";
-.preloader{
+
+.preloader {
 	background-color: #fff;
 	position: fixed;
 	display: flex;
-	width:100vw;
-	height:100vh;
+	width: 100vw;
+	height: 100vh;
 	z-index: 3;
-	& img{
+
+	& img {
 		max-width: 500px;
 		margin: 0 auto;
 		position: absolute;
@@ -56,8 +58,19 @@ a {
 	justify-content: end;
 	padding-top: 100px;
 	@media(max-width: 1024px) {
-		padding-top: 20px;
+		position: fixed;
+		background-color: #fff;
+		top: 0;
+		width: 100%;
+		z-index: 10;
+		padding-top: 0;
 		padding-left: 20px;
+	}
+
+	& > .row {
+		transform: none !important;
+		align-items: center;
+
 	}
 
 	&_links {
@@ -226,12 +239,21 @@ a {
 
 		& img {
 			width: 100%;
+
 		}
 
-		@media(max-width: 1024px) {
+		&.small {
+			display: none;
 			position: relative;
 			margin-top: 20px;
 			top: 0;
+		}
+
+		@media(max-width: 1024px) {
+			display: none;
+			&.small {
+				display: block;
+			}
 		}
 	}
 
@@ -415,6 +437,7 @@ a {
 
 		padding-left: 20px;
 		padding-right: 20px;
+		padding-top: 0;
 		padding-bottom: 40px;
 	}
 
@@ -462,17 +485,29 @@ a {
 
 		& img {
 			width: 100%;
-		}@media(max-width: 1024px) {
-		position: relative;
-		margin-top: 20px;
-		top: 0;
-	}
+		}
+
+		&.small {
+			display: none;
+			position: relative;
+			margin-top: 20px;
+			top: 0;
+		}
+
+		@media(max-width: 1024px) {
+			display: none;
+			&.small {
+				display: block;
+			}
+		}
 	}
 }
-.emoji{
+
+.emoji {
 	padding-bottom: 50px;
-	& .row{
-		& img{
+
+	& .row {
+		& img {
 			max-width: 512px;
 			width: 100%;
 		}
