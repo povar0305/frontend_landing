@@ -41,7 +41,8 @@ if (localStorage.getItem('firstLoader')) {
 
 $(document)
 	.ready(function () {
-		$('.scroll').hide()
+		$('.scroll')
+			.hide();
 
 		AOS.init();
 
@@ -69,7 +70,8 @@ $(document)
 			});
 		$(window)
 			.scroll(function () {
-				$('.scroll').show()
+				$('.scroll')
+					.show();
 				let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 				let windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 				let documentHeight = Math.max(
@@ -80,11 +82,38 @@ $(document)
 				$('.scroll span')
 					.text(precent + '%');
 				if (precent > 99) {
-				$('.scroll span').hide()
-				$('.scroll img').show()
-				}else{
-					$('.scroll span').show()
-					$('.scroll img').hide()
+					$('.scroll span')
+						.hide();
+					$('.scroll img')
+						.show();
+				} else {
+					$('.scroll span')
+						.show();
+					$('.scroll img')
+						.hide();
 				}
+				if (scrollTop > $('.experience_col--man img')
+					.offset().top) {
+					$('.experience_col--man img')
+						.css(
+							{
+								'position': 'fixed',
+								'max-width': '300px',
+								'top': '0',
+							},
+						);
+				}
+				if (scrollTop > $('.experience_col')
+					.offset().top + $('.experience_col').height()-$('.experience_col--man img').height()) {
+					$('.experience_col--man img')
+						.css(
+							{
+								'position': 'relative',
+								'max-width': '300px',
+								'top': '0',
+							},
+						);
+				}
+
 			});
 	});

@@ -2,8 +2,8 @@
 
 $protocol = $_SERVER['PROTOCOL'] = isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) ? 'https' : 'http';
 $host = $protocol . '://' . $_SERVER['HTTP_HOST'];
-$title = '';
-$description = '';
+$title = 'Поварницина София';
+$description = 'Front-end';
 $image = $host . '/images/';
 
 // Uncomment the code below and fill in the pages if necessary
@@ -13,7 +13,7 @@ $image = $host . '/images/';
 // 		'description' => '',
 // 		'image' => '/images/',
 // 	],
-// ];
+// ];ы
 
 $page = @$pages[$_SERVER['REQUEST_URI']];
 
