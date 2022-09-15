@@ -105,8 +105,7 @@ $(document)
 								},
 							);
 					}
-					if (scrollTop > $('.experience_col')
-						.offset().top + $('.experience_col').height()-$('.experience_col--man img').height()) {
+					if (scrollTop > $('.experience_col').offset().top + $('.experience_col').height()-$('.experience_col--man img').height() || scrollTop <$('.experience_col').offset().top) {
 						$('.experience_col--man img')
 							.css(
 								{
